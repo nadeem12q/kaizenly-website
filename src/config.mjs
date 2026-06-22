@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------------------
 // Single source of truth for the site origin + base path.
 //
-// GitHub Pages (current):   origin = https://nadeem12q.github.io , base = /kaizenly-website
+// GitHub Pages (current):   origin = https://nadeem12q.github.io , base = /kaizenly
 // Custom domain (future):   origin = https://kaizenly.app          , base = ''
 //
 // To move to the custom domain later, just change `origin` to
@@ -11,7 +11,7 @@
 
 export const SITE = {
   origin: 'https://nadeem12q.github.io',
-  base: '/kaizenly-website',
+  base: '/kaizenly',
 
   name: 'KaiZenly+',
   alternateName: 'KaiZenly Plus',
@@ -23,9 +23,9 @@ export const SITE = {
 };
 
 // Absolute URL builder (origin + base + path) for canonical / OG / sitemap / JSON-LD.
-// absUrl('/')          -> https://nadeem12q.github.io/kaizenly-website/
-// absUrl('/privacy/')  -> https://nadeem12q.github.io/kaizenly-website/privacy/
-// absUrl('/llms.txt')  -> https://nadeem12q.github.io/kaizenly-website/llms.txt
+// absUrl('/')          -> https://nadeem12q.github.io/kaizenly/
+// absUrl('/privacy/')  -> https://nadeem12q.github.io/kaizenly/privacy/
+// absUrl('/llms.txt')  -> https://nadeem12q.github.io/kaizenly/llms.txt
 export function absUrl(path = '/') {
   const base = `${SITE.origin}${SITE.base}`.replace(/\/$/, '');
   const p = path === '/' ? '/' : `/${path.replace(/^\/+/, '')}`;
@@ -33,8 +33,8 @@ export function absUrl(path = '/') {
 }
 
 // Base-prefixed path for internal links & public assets (no origin).
-// withBase('/privacy/')        -> /kaizenly-website/privacy/
-// withBase('screenshots/x.webp') -> /kaizenly-website/screenshots/x.webp
+// withBase('/privacy/')        -> /kaizenly/privacy/
+// withBase('screenshots/x.webp') -> /kaizenly/screenshots/x.webp
 export function withBase(path = '/') {
   const base = SITE.base.replace(/\/$/, '');
   const p = path === '/' ? '/' : `/${path.replace(/^\/+/, '')}`;
