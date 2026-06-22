@@ -15,7 +15,7 @@ export const SITE = {
 
   name: 'KaiZenly+',
   alternateName: 'KaiZenly Plus',
-  tagline: 'Improve your life calmly, one small step at a time.',
+  tagline: 'Quiet the noise, reclaim your focus, and improve calmly—step by step',
   shortDescription:
     'Privacy-first Android app for habits, focus, journaling, mood tracking, and daily routines. Local-first, no account, no tracking.',
   twitter: '', // no handle yet

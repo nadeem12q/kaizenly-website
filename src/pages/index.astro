@@ -3,7 +3,7 @@ import Base from "../layouts/Base.astro";
 import Phone from "../components/Phone.astro";
 import DownloadCta from "../components/DownloadCta.astro";
 import { withBase } from "../config.mjs";
-import { app, helpsWith, trustStrip, focusTagline } from "../data/app.mjs";
+import { app, helpsWith, trustStrip } from "../data/app.mjs";
 import { heroShots } from "../data/screenshots.mjs";
 ---
 
@@ -22,7 +22,6 @@ import { heroShots } from "../data/screenshots.mjs";
           A calm, local-first app for <strong>habits, focus, journaling, mood, and routines</strong>.
           No developer server. No tracking. Your data stays on your device.
         </p>
-        <p class="serif" style="font-size:1.2rem;color:var(--ink);margin-top:6px">{focusTagline}</p>
         <div class="btn-row">
           <DownloadCta size="lg" />
           <a class="btn btn-secondary btn-lg" href={withBase("/features/")}>Explore features</a>

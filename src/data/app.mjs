@@ -8,7 +8,7 @@
 export const app = {
   name: 'KaiZenly+',
   alternateName: 'KaiZenly Plus',
-  tagline: 'Improve your life calmly, one small step at a time.',
+  tagline: 'Quiet the noise, reclaim your focus, and improve calmly—step by step',
   shortTagline: 'Small steps. Better days.',
   version: '0.1.1',
   platform: 'Android',
@@ -260,7 +260,7 @@ export const trustStrip = [
 // --- Positioning & focus messaging ------------------------------------------
 // Used by the hero, the /compare/ page, and the AI/LLM files. Original wording
 // (not copied from any competitor). Every claim maps to a real, shipped feature.
-export const focusTagline = 'Quiet the noise. Reclaim your focus.';
+export const focusTagline = 'Quiet the noise, reclaim your focus, and improve calmly—step by step';
 
 export const positioning = {
   oneLiner:
