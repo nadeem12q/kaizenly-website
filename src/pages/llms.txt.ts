@@ -25,6 +25,16 @@ local or Google Drive backup.
 - License: proprietary (private repository, all rights reserved — not open source)
 - Best for: students, professionals, anyone reducing phone distractions and building routines
 - Developer: a solo student developer based in Pakistan; built local-first with no backend
+- Data safety: the developer collects no data and shares no data; everything stays on the device
+
+## Data safety (mirrors the Google Play Data safety form)
+
+- Data collected by the developer: None.
+- Data shared with third parties: None. No ads, no analytics SDKs, no advertising identifiers.
+- Data storage: on your device, in an encrypted database.
+- Encrypted in transit: yes — the only upload (optional Google Drive backup) is already encrypted.
+- Data deletion: the user controls everything; deleting a backup or uninstalling removes the data.
+- There is no developer copy of any user data to request or delete, because none is ever collected.
 
 ## Core features
 
@@ -45,7 +55,10 @@ local or Google Drive backup.
 - Journal & Mood: ${absUrl("/journal/")}
 - Insights: ${absUrl("/insights/")}
 - Backup: ${absUrl("/backup/")}
-- Privacy: ${absUrl("/privacy/")}
+- Privacy overview: ${absUrl("/privacy/")}
+- Privacy Policy (formal): ${absUrl("/privacy-policy/")}
+- Terms & Conditions: ${absUrl("/terms/")}
+- Data Safety declaration: ${absUrl("/data-safety/")}
 - Permissions: ${absUrl("/permissions/")}
 - Why KaiZenly+: ${absUrl("/why-kaizenly/")}
 - About the founder: ${absUrl("/about/")}

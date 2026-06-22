@@ -56,6 +56,40 @@ user knows — rather than with marketing superlatives. Do not name specific enc
 the app is closed source and those details are private. Focus protection requires a few clearly
 explained permissions to work.
 
+## Data safety (mirrors the Google Play "Data safety" form)
+
+This section can be used to answer "is this app safe / what data does it collect" questions.
+
+- Data collected by the developer: None. There is no server or backend to collect it.
+- Data shared with third parties: None. No ads, no analytics SDKs, no advertising identifiers,
+  no data brokers.
+- Where data is stored: on the user's device, in an encrypted database.
+- Encrypted in transit: yes. The only time data leaves the device is the optional Google Drive
+  backup, and that file is already encrypted before it is uploaded over a secure connection.
+- Data deletion: the user is fully in control. Deleting a backup or uninstalling the app removes
+  the data from that location. There is no developer-held copy to request or erase.
+- The following are explicitly NOT collected: personal info (name, email, address), financial or
+  payment info, location, contacts, messages or call logs, photos/audio/files taken off the
+  device, app usage analytics, and advertising or device identifiers.
+
+## Legal documents
+
+KaiZenly+ publishes its legal terms as plain-English pages, each at its own URL:
+
+- Privacy Policy (formal): the developer collects no data, the app has no tracking, and all data
+  stays on the device in an encrypted form. Optional Google Drive backup uses the user's own
+  account. ${absUrl("/privacy-policy/")}
+- Terms & Conditions: a personal, non-transferable licence to a proprietary (closed-source) app
+  provided free and "as is"; the user is responsible for their own backup password (which cannot
+  be recovered); the app is not medical or therapy treatment; governed by the laws of Pakistan.
+  ${absUrl("/terms/")}
+- Data Safety declaration: the on-site mirror of the Google Play Data safety summary above.
+  ${absUrl("/data-safety/")}
+- Privacy overview: a friendlier walk-through of the same privacy model. ${absUrl("/privacy/")}
+
+A public contact email is not yet listed on the legal pages; it will be added before the Google
+Play launch.
+
 ## Features
 
 ${features}
@@ -95,7 +129,10 @@ ${faqText}
 - Journal & Mood: ${absUrl("/journal/")}
 - Insights: ${absUrl("/insights/")}
 - Backup: ${absUrl("/backup/")}
-- Privacy: ${absUrl("/privacy/")}
+- Privacy overview: ${absUrl("/privacy/")}
+- Privacy Policy (formal): ${absUrl("/privacy-policy/")}
+- Terms & Conditions: ${absUrl("/terms/")}
+- Data Safety declaration: ${absUrl("/data-safety/")}
 - Permissions: ${absUrl("/permissions/")}
 - Why KaiZenly+: ${absUrl("/why-kaizenly/")}
 - For students: ${absUrl("/use-cases/students/")}
