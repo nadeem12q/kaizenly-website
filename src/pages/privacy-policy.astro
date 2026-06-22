@@ -1,0 +1,112 @@
+---
+import Base from "../layouts/Base.astro";
+import { withBase } from "../config.mjs";
+
+const updated = "June 22, 2026";
+---
+
+<Base
+  title="Privacy Policy"
+  path="/privacy-policy/"
+  description="The official privacy policy for KaiZenly+. The app is local-first: no developer server, no account, no tracking or analytics. Your data stays on your device in an encrypted database and is never sent to the developer."
+>
+  <section class="section">
+    <div class="container" style="max-width:760px">
+      <span class="eyebrow">Legal</span>
+      <h1 class="display-lg" style="margin-top:10px">Privacy Policy</h1>
+      <p class="lede" style="margin-top:16px">
+        This is the official privacy policy for KaiZenly+. In short: the developer does not collect
+        your data, the app has no tracking, and everything you create stays on your device. For a
+        friendlier walk-through, see the <a href={withBase("/privacy/")}>Privacy overview</a>.
+      </p>
+
+      <div class="prose" style="margin-top:40px">
+        <h2 class="display-sm serif">Who this policy is from</h2>
+        <p>
+          KaiZenly+ (“the app”) is made by one solo student developer based in Pakistan. There is no
+          company, no marketing network, and no data team behind it.
+        </p>
+
+        <h2 class="display-sm serif">What data the developer collects</h2>
+        <p>
+          <strong>None.</strong> KaiZenly+ has no developer server or backend. Your habits, journals,
+          moods, schedules, and settings are never sent to the developer. The app has no analytics
+          SDK, no advertising identifiers, and no background reporting. Normal use does not need an
+          internet connection at all.
+        </p>
+
+        <h2 class="display-sm serif">Where your data lives</h2>
+        <p>
+          Everything you create stays <strong>on your device</strong> in an <strong>encrypted</strong>
+          database. App preferences are stored locally on the device too. Nothing is uploaded unless
+          you personally choose to make a backup.
+        </p>
+
+        <h2 class="display-sm serif">Encryption</h2>
+        <p>
+          Your data is <strong>encrypted</strong>. The app’s on-device data is encrypted, your local
+          backups are encrypted, and the optional Google Drive backup file is already encrypted
+          before it leaves your phone. A backup is unlocked only by a password <strong>only you
+          know</strong> — it is never stored and never sent anywhere.
+        </p>
+
+        <h2 class="display-sm serif">Optional Google Drive backup</h2>
+        <p>
+          Google Drive backup is <strong>optional, manual, and opt-in</strong>. If you enable it, you
+          sign in with <strong>your own</strong> Google account and the app uploads one
+          already-encrypted file to a private app folder in your Drive that only KaiZenly+ can see.
+          Backups go to your Drive — <strong>never</strong> to the developer. Your use of Google
+          Drive is also covered by Google’s own privacy policy.
+        </p>
+
+        <h2 class="display-sm serif">Permissions</h2>
+        <p>
+          Some features (mainly Focus / Zen Shield) need device permissions. They are requested only
+          when you enter a feature that needs them, and each one is explained on the
+          <a href={withBase("/permissions/")}>Permissions page</a>. The Accessibility service used
+          during a focus session reads only app package and class names for enforcement — it does
+          <strong>not</strong> read your messages, passwords, keystrokes, or screen content.
+        </p>
+
+        <h2 class="display-sm serif">Children’s privacy</h2>
+        <p>
+          KaiZenly+ does not collect any personal data from anyone, including children. It is a
+          general self-improvement tool and is not directed at children under 13.
+        </p>
+
+        <h2 class="display-sm serif">Keeping or deleting your data</h2>
+        <p>
+          Because your data lives only on your device, <strong>you</strong> control it completely.
+          Deleting a backup or uninstalling the app removes the data from that location. There is no
+          developer copy to request or delete, because the developer never had it.
+        </p>
+
+        <h2 class="display-sm serif">Third parties</h2>
+        <p>
+          The only third party involved is Google — and only if you choose to use Google Drive
+          backup, through your own account. No data is sold or shared with advertisers, brokers, or
+          anyone else.
+        </p>
+
+        <h2 class="display-sm serif">Changes to this policy</h2>
+        <p>
+          If server, backend, AI, or MCP features are ever added, this policy will be updated before
+          any data behaviour changes. Those features are only a possible future direction today.
+        </p>
+
+        <h2 class="display-sm serif">Contact</h2>
+        <p>
+          A public contact email will be added here before the Google Play launch. Until then, see
+          the <a href={withBase("/about/")}>About</a> page to learn more about the developer.
+        </p>
+
+        <p class="muted" style="margin-top:32px;font-size:0.88rem">Last updated: {updated}</p>
+      </div>
+
+      <div class="btn-row" style="margin-top:32px">
+        <a class="btn btn-secondary" href={withBase("/data-safety/")}>Data Safety</a>
+        <a class="btn btn-ghost" href={withBase("/terms/")}>Terms &amp; Conditions →</a>
+      </div>
+    </div>
+  </section>
+</Base>

@@ -33,6 +33,14 @@ const cols = [
       { path: "/download/", label: "Download" },
     ],
   },
+  {
+    title: "Legal",
+    links: [
+      { path: "/privacy-policy/", label: "Privacy Policy" },
+      { path: "/terms/", label: "Terms & Conditions" },
+      { path: "/data-safety/", label: "Data Safety" },
+    ],
+  },
 ];
 
 const year = new Date().getFullYear();
@@ -66,9 +74,10 @@ const year = new Date().getFullYear();
     <div class="footer-bottom">
       <span>© {year} {SITE.name}. All rights reserved.</span>
       <span class="tag-row" style="gap:16px">
-        <a href={withBase("/privacy/")} class="muted">Privacy</a>
+        <a href={withBase("/privacy-policy/")} class="muted">Privacy Policy</a>
+        <a href={withBase("/terms/")} class="muted">Terms</a>
+        <a href={withBase("/data-safety/")} class="muted">Data Safety</a>
         <a href={withBase("/llms.txt")} class="muted">llms.txt</a>
-        <a href={withBase("/app-data.json")} class="muted">app-data.json</a>
       </span>
     </div>
   </div>

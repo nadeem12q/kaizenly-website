@@ -1,0 +1,103 @@
+---
+import Base from "../layouts/Base.astro";
+import { withBase } from "../config.mjs";
+
+const updated = "June 22, 2026";
+
+// Mirrors the Google Play "Data safety" form, in plain language.
+const summary = [
+  { label: "Data collected by the developer", value: "None" },
+  { label: "Data shared with third parties", value: "None" },
+  { label: "Data stored", value: "On your device, in an encrypted database" },
+  { label: "Encrypted in transit", value: "Yes — the only upload (optional Drive backup) is already encrypted" },
+  { label: "You can delete your data", value: "Yes — delete a backup or uninstall the app" },
+];
+
+const dataTypes = [
+  "Personal info (name, email, address)",
+  "Financial or payment info",
+  "Location",
+  "Contacts",
+  "Messages or call logs",
+  "Photos, audio, or files (taken off your device)",
+  "App activity or usage analytics",
+  "Advertising or device identifiers",
+];
+---
+
+<Base
+  title="Data Safety"
+  path="/data-safety/"
+  description="KaiZenly+ data safety declaration: the developer collects no data and shares no data. Everything stays on your device in an encrypted database. This page mirrors the Google Play Data safety information in plain language."
+>
+  <section class="section">
+    <div class="container" style="max-width:760px">
+      <span class="eyebrow">Legal</span>
+      <h1 class="display-lg" style="margin-top:10px">Data Safety</h1>
+      <p class="lede" style="margin-top:16px">
+        This page states, in plain language, what KaiZenly+ does with your data — the same
+        information that will appear in the Google Play “Data safety” section. The short version:
+        the developer collects nothing and shares nothing.
+      </p>
+
+      <div class="row-list" style="margin-top:32px">
+        {summary.map((s) => (
+          <div class="row" style="grid-template-columns:1fr auto;gap:16px;align-items:center">
+            <p style="margin:0;color:var(--ink-muted);font-size:0.95rem">{s.label}</p>
+            <p style="margin:0;color:var(--ink);font-weight:600;font-size:0.95rem;text-align:right">{s.value}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="prose" style="margin-top:48px">
+        <h2 class="display-sm serif">No data collected</h2>
+        <p>
+          KaiZenly+ has no developer server and no backend. The app does <strong>not</strong> collect
+          or send any of the following to the developer:
+        </p>
+        <ul class="feature-list">
+          {dataTypes.map((d) => (<li>{d}</li>))}
+        </ul>
+        <p>
+          Your habits, journals, moods, schedules, and settings are created and kept entirely on your
+          own device.
+        </p>
+
+        <h2 class="display-sm serif">No data shared</h2>
+        <p>
+          Nothing is sold or shared with advertisers, data brokers, or any third party. KaiZenly+ has
+          no ads, no analytics SDKs, and no advertising identifiers.
+        </p>
+
+        <h2 class="display-sm serif">How your data is protected</h2>
+        <p>
+          Your data is <strong>encrypted</strong> on your device. The optional Google Drive backup is
+          the only time anything leaves your phone — and that file is <strong>already encrypted</strong>
+          before it is uploaded over a secure connection to <strong>your own</strong> private Drive
+          app folder. A backup is unlocked only by a password <strong>only you know</strong>.
+        </p>
+
+        <h2 class="display-sm serif">Deleting your data</h2>
+        <p>
+          Because your data lives only on your device, you control it fully. Deleting a backup or
+          uninstalling the app removes the data from that location. There is no developer copy to
+          request or erase, because the developer never received it.
+        </p>
+
+        <h2 class="display-sm serif">Related pages</h2>
+        <p>
+          For more detail, see the <a href={withBase("/privacy-policy/")}>Privacy Policy</a>, the
+          friendly <a href={withBase("/privacy/")}>Privacy overview</a>, and the line-by-line
+          <a href={withBase("/permissions/")}>Permissions page</a>.
+        </p>
+
+        <p class="muted" style="margin-top:32px;font-size:0.88rem">Last updated: {updated}</p>
+      </div>
+
+      <div class="btn-row" style="margin-top:32px">
+        <a class="btn btn-secondary" href={withBase("/privacy-policy/")}>Privacy Policy</a>
+        <a class="btn btn-ghost" href={withBase("/terms/")}>Terms &amp; Conditions →</a>
+      </div>
+    </div>
+  </section>
+</Base>
