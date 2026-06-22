@@ -24,6 +24,7 @@ local or Google Drive backup.
 - Backup: local encrypted backup + optional Google Drive backup to the user's own Drive
 - License: proprietary (private repository, all rights reserved — not open source)
 - Best for: students, professionals, anyone reducing phone distractions and building routines
+- Developer: a solo student developer based in Pakistan; built local-first with no backend
 
 ## Core features
 

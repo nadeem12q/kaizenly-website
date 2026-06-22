@@ -1,6 +1,5 @@
 ---
 import { SITE, withBase } from "../config.mjs";
-import DownloadCta from "./DownloadCta.astro";
 
 const navItems = [
   { path: "/features/", label: "Features" },
@@ -31,7 +30,7 @@ const isActive = (p) => {
           {item.label}
         </a>
       ))}
-      <DownloadCta class="nav-cta" />
+      <a class="btn btn-primary nav-cta" href={withBase("/download/")}>Download</a>
     </nav>
 
     <button class="theme-toggle" data-theme-toggle type="button" aria-label="Toggle light and dark theme" title="Toggle theme">

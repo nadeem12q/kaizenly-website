@@ -145,7 +145,7 @@ export const excludedFiles = ['48_drive_restore_progress.webp'];
 export const heroShots = [
   { file: '43_habits_list_progress_light.webp', alt: 'KaiZenly+ habits dashboard with progress' },
   { file: '52_insights_filled_light_clean.webp', alt: 'KaiZenly+ insights with a mood trend and stat tiles' },
-  { file: '54_focus_protected_wall_light.webp', alt: 'KaiZenly+ Focus Protected wall' },
+  { file: '01_onboarding_welcome.webp', alt: 'KaiZenly+ welcome screen with a serif headline about rest and a line illustration' },
 ];
 
 // Flat helper: every published file (for copy + sanity checks).

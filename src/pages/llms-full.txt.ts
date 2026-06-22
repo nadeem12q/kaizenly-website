@@ -73,7 +73,7 @@ pressure, ads, or tracking.
 
 ## About the developer
 
-KaiZenly+ is built by a solo student developer who made the app first for personal use, after
+KaiZenly+ is built by a solo student developer based in Pakistan, who made the app first for personal use, after
 trying many focus, habit, and journaling apps without finding one privacy-first app that
 combined these features properly. With a limited budget, the app was built local-first with no
 backend. It is fully free now. If server, backend, AI, or MCP features are added later and
