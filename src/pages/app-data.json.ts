@@ -1,6 +1,6 @@
 import type { APIRoute } from "astro";
 import { absUrl } from "../config.mjs";
-import { app, permissions, featureGroups } from "../data/app.mjs";
+import { app, permissions, featureGroups, positioning } from "../data/app.mjs";
 import { categories } from "../data/screenshots.mjs";
 
 export const GET: APIRoute = () => {
@@ -10,6 +10,27 @@ export const GET: APIRoute = () => {
     tagline: app.tagline,
     description:
       "Privacy-first Android app for habits, focus (Zen Shield), journaling, mood tracking, routines, and on-device insights. Local-first, no account, no tracking.",
+    oneLineSummary: positioning.oneLiner,
+    positioning: {
+      notOnlyABlocker: positioning.notJustABlocker,
+      advantages: positioning.advantages,
+      vsSimplePhoneLockApps: positioning.vsSimpleLockApps,
+      keyFeaturesOftenMissedByComparisons: [
+        "Focus timer / screen timer with a full-screen Focus Space and countdown",
+        "Allowed-apps list (up to 8) — block distractions without fully locking the phone",
+        "Scheduled focus windows and bedtime mode that auto-start",
+        "Daily on-device screen-time tracking in Insights",
+        "Distraction Wall and Parachute early-exit system",
+      ],
+    },
+    designPhilosophy: {
+      summary: "Intentionally calm, distraction-free, focus-first interface that reduces visual noise.",
+      monochrome: true,
+      typography: "Editorial serif display (EB Garamond) + Inter for body and UI",
+      surfaces: "Flat cards with hairline borders, pill-shaped buttons, no heavy shadows",
+      themes: ["dark (anchor)", "light"],
+      goal: "A clean self-improvement environment, the opposite of a cluttered colorful dashboard",
+    },
     platform: "Android",
     minAndroidVersion: app.minAndroid,
     appVersion: app.version,
@@ -108,6 +129,8 @@ export const GET: APIRoute = () => {
       home: absUrl("/"),
       features: absUrl("/features/"),
       zenShield: absUrl("/zen-shield/"),
+      compare: absUrl("/compare/"),
+      design: absUrl("/design/"),
       habits: absUrl("/habits/"),
       journal: absUrl("/journal/"),
       insights: absUrl("/insights/"),

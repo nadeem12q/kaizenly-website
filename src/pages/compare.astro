@@ -1,0 +1,105 @@
+---
+import Base from "../layouts/Base.astro";
+import DownloadCta from "../components/DownloadCta.astro";
+import { withBase } from "../config.mjs";
+import { positioning } from "../data/app.mjs";
+---
+
+<Base
+  title="KaiZenly+ vs simple phone-lock apps"
+  path="/compare/"
+  description="How KaiZenly+ compares to simple phone-lock and app-blocker apps. KaiZenly+ is not only a blocker — it adds a focus timer, a flexible allowed-apps list, scheduling, bedtime mode, habits, journaling, mood tracking, and private on-device insights."
+>
+  <section class="section">
+    <div class="container" style="max-width:860px">
+      <span class="eyebrow">Comparison</span>
+      <h1 class="display-lg" style="margin-top:10px">KaiZenly+ vs simple phone-lock apps</h1>
+      <p class="lede" style="margin-top:16px">
+        Many popular focus apps do one thing: lock your phone or block apps for a while. That helps
+        in the moment — but it does not build a routine. KaiZenly+ keeps the blocking and adds the
+        rest of the system around it, so a single app covers both <strong>protecting</strong> your
+        focus and <strong>improving</strong> your daily life.
+      </p>
+      <p class="secondary" style="margin-top:12px">
+        {positioning.notJustABlocker}
+      </p>
+    </div>
+  </section>
+
+  <section class="section--tight">
+    <div class="container" style="max-width:920px">
+      <div class="cmp-table-wrap">
+        <table class="cmp-table">
+          <thead>
+            <tr>
+              <th scope="col">What you compare</th>
+              <th scope="col">Simple phone-lock apps</th>
+              <th scope="col" class="cmp-kz">KaiZenly+</th>
+            </tr>
+          </thead>
+          <tbody>
+            {positioning.vsSimpleLockApps.map((r) => (
+              <tr>
+                <td>{r.point}</td>
+                <td class="cmp-other">{r.simpleLock}</td>
+                <td class="cmp-kz">{r.kaizenly}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="note" style="margin-top:16px">
+        This is a fair, category-level comparison against simple phone-lock and app-blocker apps in
+        general. Specific apps differ — always check the current details of any app you are comparing.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="max-width:860px">
+      <div class="section-head"><h2 class="display-md">Where KaiZenly+ goes further</h2></div>
+      <ul class="feature-list">
+        {positioning.advantages.map((a) => (<li>{a}</li>))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--surface);border-block:1px solid var(--hairline)">
+    <div class="container" style="max-width:860px">
+      <div class="section-head"><h2 class="display-md">The point most blockers miss</h2></div>
+      <div class="grid grid-2">
+        <article class="card">
+          <h3>You should not have to fully lock your phone</h3>
+          <p>
+            Real life needs calls, maps, notes, study tools, work apps, and the occasional emergency
+            app. KaiZenly+ lets you keep an <strong>allowed-apps list of up to 8 essential apps</strong>
+            usable during focus, while everything distracting stays blocked. That is more practical
+            than an all-or-nothing lock.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Focus should build a routine, not just pause the phone</h3>
+          <p>
+            A timer that locks the screen helps once. KaiZenly+ adds <strong>scheduled focus</strong>,
+            a <strong>bedtime mode</strong>, <strong>habits</strong>, <strong>journaling</strong>,
+            <strong>mood tracking</strong>, and <strong>insights</strong> — so each focus session
+            feeds a longer-term routine instead of being a one-off.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section--tight">
+    <div class="container center" style="max-width:640px">
+      <h2 class="display-md">A blocker and a routine system in one</h2>
+      <p class="lede" style="margin-top:14px">
+        Free at launch, coming soon to Google Play — with everything kept on your own device.
+      </p>
+      <div class="btn-row" style="justify-content:center;margin-top:24px">
+        <DownloadCta size="lg" />
+        <a class="btn btn-secondary btn-lg" href={withBase("/zen-shield/")}>How Zen Shield works</a>
+      </div>
+    </div>
+  </section>
+</Base>

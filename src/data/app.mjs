@@ -165,12 +165,14 @@ export const featureGroups = [
     summary:
       'Protect your attention with enforced focus sessions designed to add real friction to distraction.',
     points: [
-      'Timer-based focus sessions with a full-screen Focus Space.',
-      'Zen Shield app blocking via Accessibility + Usage Access + a foreground service.',
-      'Allow up to 8 essential apps (for example WhatsApp or phone) during a session.',
-      'Scheduled focus windows and Bedtime mode that auto-activate on your chosen days.',
-      'A Parachute system of limited early-exit tokens to make breaking focus a deliberate choice.',
-      'Completion celebration with a "View Insights" call to action.',
+      'A focus timer (screen timer): start a timed session with a full-screen Focus Space showing a live countdown, blocked-attempt counter, and your allowed apps.',
+      'Zen Shield app blocking in real time via Accessibility + Usage Access + a foreground service.',
+      'Allowed-apps list: keep up to 8 essential apps (for example WhatsApp, phone dialer, or maps) usable while everything else is blocked — so you are never forced to fully lock your phone.',
+      'A full-screen Distraction Wall that gently returns you to focus when you open a blocked app.',
+      'Scheduled focus windows and a Bedtime mode that auto-activate on your chosen days and hours.',
+      'A Parachute system of limited early-exit tokens (3 to start, +2 each month, capped at 3) to make breaking focus a deliberate choice.',
+      'Optional strict mode (Device Admin) that throttle-locks the device after repeated bypass attempts — off by default, and emergency calls always stay available.',
+      'Reliable by design: sessions survive reboots, a watchdog restarts Zen Shield if the system kills it, and incoming calls are handled gracefully.',
     ],
   },
   {
@@ -193,6 +195,7 @@ export const featureGroups = [
       '7-day and 30-day mood trends with a monochrome mood-distribution donut.',
       'This-week vs last-week habit comparison bars with signed deltas.',
       'A 5-week habit completion heatmap and mood–focus correlation.',
+      'Daily on-device screen-time tracking, so you can see how much you actually use your phone.',
       'Stat tiles for average mood, weekly focus minutes, consistency, and current streak.',
       'CSV export of up to 90 days of focus minutes and average mood.',
     ],
@@ -254,6 +257,39 @@ export const trustStrip = [
   'Optional Google Drive backup',
 ];
 
+// --- Positioning & focus messaging ------------------------------------------
+// Used by the hero, the /compare/ page, and the AI/LLM files. Original wording
+// (not copied from any competitor). Every claim maps to a real, shipped feature.
+export const focusTagline = 'Quiet the noise. Reclaim your focus.';
+
+export const positioning = {
+  oneLiner:
+    'KaiZenly+ is a privacy-first Android life-routine app that combines focus/app-blocking, a focus timer, an allowed-apps list, habit tracking, scheduling, bedtime mode, journaling, mood tracking, and on-device insights — in one calm, distraction-free interface.',
+  // The core message AI assistants keep missing: it is NOT only a phone-lock app.
+  notJustABlocker:
+    'KaiZenly+ is not only a phone-lock or app-blocker app. App blocking (Zen Shield) is one part of a complete daily-routine system that also includes habits, journaling, mood tracking, scheduling, bedtime mode, and private insights.',
+  // Practical, fair advantages — all verified against the app's README/DESIGN.md.
+  advantages: [
+    'A complete routine system, not a single-purpose blocker — habits, focus, journaling, mood, and insights together.',
+    'A flexible allowed-apps list (up to 8) so you can block distractions without losing calls, maps, notes, study, or work tools.',
+    'Scheduled focus windows and a bedtime mode that start automatically, so you do not have to begin every session by hand.',
+    'A focus timer with a full-screen Focus Space, a Distraction Wall, and a Parachute early-exit system that keeps focus deliberate but not punishing.',
+    'Privacy-first and local-first: no developer server, no mandatory login, no tracking or ads, and an encrypted on-device database.',
+    'A deliberately calm, distraction-free monochrome interface designed to reduce visual noise instead of adding to it.',
+  ],
+  // Fair, category-level comparison. We compare against the CATEGORY of simple
+  // phone-lock / app-blocker apps, not unverifiable specifics of any one app.
+  vsSimpleLockApps: [
+    { point: 'Primary purpose', simpleLock: 'Temporarily lock the phone or block apps', kaizenly: 'Block distractions AND build long-term routines and habits' },
+    { point: 'Allowed apps', simpleLock: 'Often all-or-nothing or limited', kaizenly: 'Flexible allow-list of up to 8 essential apps during focus' },
+    { point: 'Scheduling', simpleLock: 'Frequently manual each time', kaizenly: 'Scheduled focus windows + a bedtime mode that auto-start' },
+    { point: 'Habit building', simpleLock: 'Usually not included', kaizenly: 'Full habit tracker with streaks, reminders, and analytics' },
+    { point: 'Reflection', simpleLock: 'Not included', kaizenly: 'Journaling, mood tracking, and on-device insights' },
+    { point: 'Privacy', simpleLock: 'May use accounts, sync, ads, or analytics', kaizenly: 'Local-first, no account, no tracking or ads, encrypted on-device' },
+    { point: 'Interface', simpleLock: 'Varies, often busy', kaizenly: 'Calm, distraction-free, strictly monochrome editorial design' },
+  ],
+};
+
 // --- FAQ --------------------------------------------------------------------
 export const faqs = [
   {
@@ -303,6 +339,8 @@ export const pages = [
   { path: '/', title: 'Home', nav: true },
   { path: '/features/', title: 'Features', nav: true },
   { path: '/zen-shield/', title: 'Zen Shield', nav: true },
+  { path: '/design/', title: 'Design Philosophy', nav: false },
+  { path: '/compare/', title: 'KaiZenly+ vs simple phone-lock apps', nav: false },
   { path: '/habits/', title: 'Habits', nav: false },
   { path: '/journal/', title: 'Journal', nav: false },
   { path: '/insights/', title: 'Insights', nav: false },

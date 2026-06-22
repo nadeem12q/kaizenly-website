@@ -398,3 +398,14 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.1; lett
 .footer-col a { display: block; color: var(--ink-secondary); font-size: 0.92rem; padding: 5px 0; }
 .footer-col a:hover { color: var(--ink); }
 .footer-bottom { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--hairline); display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; color: var(--ink-muted); font-size: 0.85rem; }
+
+/* ---- Comparison table (/compare/) -------------------------------------- */
+.cmp-table-wrap { overflow-x: auto; border: 1px solid var(--hairline); border-radius: var(--r-md); margin-top: 28px; }
+.cmp-table { width: 100%; border-collapse: collapse; min-width: 560px; font-size: 0.95rem; }
+.cmp-table th, .cmp-table td { text-align: left; padding: 14px 18px; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+.cmp-table thead th { font-family: var(--sans); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-muted); background: var(--surface); }
+.cmp-table thead th.cmp-kz { color: var(--ink); }
+.cmp-table tbody tr:last-child td { border-bottom: 0; }
+.cmp-table td:first-child { font-weight: 500; color: var(--ink-secondary); white-space: nowrap; }
+.cmp-table td.cmp-kz { color: var(--ink); }
+.cmp-table td.cmp-other { color: var(--ink-muted); }

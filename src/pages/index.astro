@@ -3,7 +3,7 @@ import Base from "../layouts/Base.astro";
 import Phone from "../components/Phone.astro";
 import DownloadCta from "../components/DownloadCta.astro";
 import { withBase } from "../config.mjs";
-import { app, helpsWith, trustStrip } from "../data/app.mjs";
+import { app, helpsWith, trustStrip, focusTagline } from "../data/app.mjs";
 import { heroShots } from "../data/screenshots.mjs";
 ---
 
@@ -22,6 +22,7 @@ import { heroShots } from "../data/screenshots.mjs";
           A calm, local-first app for <strong>habits, focus, journaling, mood, and routines</strong>.
           No developer server. No tracking. Your data stays on your device.
         </p>
+        <p class="serif" style="font-size:1.2rem;color:var(--ink);margin-top:6px">{focusTagline}</p>
         <div class="btn-row">
           <DownloadCta size="lg" />
           <a class="btn btn-secondary btn-lg" href={withBase("/features/")}>Explore features</a>
@@ -58,6 +59,9 @@ import { heroShots } from "../data/screenshots.mjs";
           KaiZenly+ brings the parts of personal growth that usually live in five different apps
           into one quiet, private experience.
         </p>
+        <div class="btn-row" style="justify-content:center;margin-top:18px">
+          <a class="btn btn-ghost" href={withBase("/compare/")}>KaiZenly+ vs simple phone-lock apps →</a>
+        </div>
       </div>
       <div class="grid grid-3">
         {helpsWith.map((h) => (
@@ -82,12 +86,14 @@ import { heroShots } from "../data/screenshots.mjs";
           use limited “parachute” tokens so breaking focus is always a deliberate choice.
         </p>
         <ul class="feature-list">
-          <li>Allow up to 8 essential apps during a session.</li>
-          <li>A full-screen Focus Wall when a blocked app is opened.</li>
+          <li>A focus timer (screen timer) with a full-screen Focus Space and countdown.</li>
+          <li>An allowed-apps list — keep up to 8 essential apps usable during a session.</li>
+          <li>A full-screen Distraction Wall when a blocked app is opened.</li>
           <li>Scheduled focus and bedtime mode that run automatically.</li>
         </ul>
         <div class="btn-row" style="margin-top:22px">
           <a class="btn btn-secondary" href={withBase("/zen-shield/")}>How Zen Shield works</a>
+          <a class="btn btn-ghost" href={withBase("/compare/")}>vs simple lock apps →</a>
         </div>
         <p class="note" style="margin-top:18px">
           Designed to add friction and protect focus — not an unbreakable lock.
