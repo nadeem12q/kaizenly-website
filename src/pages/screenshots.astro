@@ -1,0 +1,39 @@
+---
+import Base from "../layouts/Base.astro";
+import Shot from "../components/Shot.astro";
+import { categories } from "../data/screenshots.mjs";
+---
+
+<Base
+  title="Screenshots"
+  path="/screenshots/"
+  description="A full screenshot gallery of KaiZenly+ v0.1.1 — onboarding, habits, Zen Shield focus, scheduled focus, journaling, mood, insights, backup, settings, and the home-screen widget, in both dark and light themes."
+>
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Screenshots</span>
+        <h1 class="display-lg" style="margin-top:10px">Real screens, real demo data</h1>
+        <p class="lede">
+          Captured from KaiZenly+ v0.1.1 on a real Android device. All content is safe demo data.
+          Account details in backup screens are masked for privacy.
+        </p>
+        <nav class="tag-row" style="margin-top:20px" aria-label="Screenshot categories">
+          {categories.map((c) => (
+            <a class="badge badge-outline" href={`#${c.id}`}>{c.title}</a>
+          ))}
+        </nav>
+      </div>
+
+      {categories.map((c) => (
+        <section id={c.id} style="margin-top:56px;scroll-margin-top:90px">
+          <h2 class="display-sm serif">{c.title}</h2>
+          <p class="secondary" style="margin-top:8px;max-width:70ch">{c.blurb}</p>
+          <div class="grid grid-4" style="margin-top:24px">
+            {c.shots.map((s) => <Shot file={s.file} alt={s.alt} caption={s.alt} />)}
+          </div>
+        </section>
+      ))}
+    </div>
+  </section>
+</Base>

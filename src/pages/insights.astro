@@ -1,0 +1,58 @@
+---
+import Base from "../layouts/Base.astro";
+import Phone from "../components/Phone.astro";
+import Shot from "../components/Shot.astro";
+import DownloadCta from "../components/DownloadCta.astro";
+import { withBase } from "../config.mjs";
+
+const gallery = [
+  { file: "52_insights_filled_light_clean.webp", alt: "Insights with mood trend and stat tiles", caption: "Mood trend + stats" },
+  { file: "13_insights_empty_dark.webp", alt: "Insights with a weekly mood trend and a mood donut", caption: "Mood donut" },
+  { file: "50_insights_habits_comparison_dark.webp", alt: "Habit comparison bars for four habits", caption: "Habit comparison" },
+  { file: "14_insights_filled_dark.webp", alt: "Insights with a mood donut in dark theme", caption: "Dark theme" },
+];
+---
+
+<Base
+  title="Insights"
+  path="/insights/"
+  description="KaiZenly+ insights are computed entirely on your device: mood trends, a mood-distribution donut, this-week vs last-week habit comparison, a 5-week activity heatmap, mood–focus correlation, and CSV export."
+>
+  <section class="section">
+    <div class="container split split--reverse">
+      <div>
+        <span class="eyebrow">Insights</span>
+        <h1 class="display-lg" style="margin-top:10px">Understand your patterns — privately</h1>
+        <p class="lede" style="margin-top:16px">
+          Every chart in KaiZenly+ is calculated on your device. No server processes your habits,
+          moods, or focus history. You just open the Insights tab and see how your small steps add up.
+        </p>
+        <ul class="feature-list" style="margin-top:16px">
+          <li>7-day and 30-day mood trends with a monochrome distribution donut.</li>
+          <li>This-week vs last-week habit comparison bars with signed deltas.</li>
+          <li>A 5-week habit completion heatmap and mood–focus correlation.</li>
+          <li>Stat tiles for average mood, weekly focus minutes, consistency, and streak.</li>
+          <li>CSV export of up to 90 days of focus minutes and average mood.</li>
+        </ul>
+        <div class="btn-row" style="margin-top:24px">
+          <DownloadCta />
+          <a class="btn btn-secondary" href={withBase("/privacy/")}>How it stays private</a>
+        </div>
+      </div>
+      <div class="split-media">
+        <Phone file="14_insights_filled_dark.webp" alt="Insights with a mood level donut chart in dark theme" eager />
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--surface);border-block:1px solid var(--hairline)">
+    <div class="container">
+      <div class="section-head"><h2 class="display-md">Charts, in strictly monochrome</h2>
+        <p class="lede">A six-step gray ramp tells the data apart — no green-up / red-down, just calm clarity.</p>
+      </div>
+      <div class="grid grid-4">
+        {gallery.map((s) => <Shot file={s.file} alt={s.alt} caption={s.caption} />)}
+      </div>
+    </div>
+  </section>
+</Base>

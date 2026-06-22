@@ -1,0 +1,82 @@
+---
+import Base from "../layouts/Base.astro";
+import Phone from "../components/Phone.astro";
+import Shot from "../components/Shot.astro";
+import DownloadCta from "../components/DownloadCta.astro";
+import { withBase } from "../config.mjs";
+
+const gallery = [
+  { file: "42_focus_setup_light_full.webp", alt: "Focus session setup with timer, start button and allowed apps", caption: "Set a timer and start" },
+  { file: "20_focus_allowed_apps_picker.webp", alt: "Allowed apps picker with WhatsApp, Phone and SMS", caption: "Allow up to 8 essential apps" },
+  { file: "53_focus_session_light_whatsapp.webp", alt: "Running focus session with WhatsApp allowed", caption: "A running session" },
+  { file: "38_focus_protected_wall.webp", alt: "Before you leave — take a parachute to exit a session early", caption: "The parachute exit" },
+  { file: "39_focus_complete_celebration.webp", alt: "Focus complete celebration with confetti", caption: "A calm completion" },
+  { file: "12_insights_filled_light_scroll.webp", alt: "Scheduled focus window and bedtime mode", caption: "Schedule + bedtime mode" },
+];
+---
+
+<Base
+  title="Zen Shield & Focus"
+  path="/zen-shield/"
+  description="Zen Shield protects your focus with timer-based sessions, an allowed-apps list, a full-screen Focus Wall, scheduled focus, and bedtime mode — designed to add friction, not to be an unbreakable lock."
+>
+  <section class="section">
+    <div class="container split">
+      <div>
+        <span class="eyebrow">Zen Shield &amp; Focus</span>
+        <h1 class="display-lg" style="margin-top:10px">Focus that holds — calmly</h1>
+        <p class="lede" style="margin-top:16px">
+          Zen Shield is KaiZenly+’s focus-protection system. Start a timed session and distracting
+          apps are blocked, while the apps you actually need stay available. It’s built to add real
+          friction to the moments you’d normally lose to scrolling.
+        </p>
+        <div class="btn-row" style="margin-top:24px">
+          <DownloadCta />
+          <a class="btn btn-secondary" href={withBase("/permissions/")}>Why it needs permissions</a>
+        </div>
+      </div>
+      <div class="split-media">
+        <Phone file="54_focus_protected_wall_light.webp" alt="Focus Protected wall with a shield, shown when the session is locked" eager />
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--surface);border-block:1px solid var(--hairline)">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="display-md">How it works</h2>
+      </div>
+      <div class="grid grid-3">
+        <article class="card"><h3>Timed sessions</h3><p>Pick a duration and start a full-screen Focus Space with a countdown and a blocked-attempt counter.</p></article>
+        <article class="card"><h3>Allowed apps</h3><p>Keep up to 8 essential apps — like WhatsApp or your phone dialer — usable while everything else is blocked.</p></article>
+        <article class="card"><h3>The Focus Wall</h3><p>Open a blocked app and a full-screen wall gently returns you to focus instead of the distraction.</p></article>
+        <article class="card"><h3>Parachutes</h3><p>A small number of early-exit tokens make breaking focus a deliberate decision, not a reflex.</p></article>
+        <article class="card"><h3>Scheduled focus</h3><p>Auto-start focus sessions at set times on the days you choose.</p></article>
+        <article class="card"><h3>Bedtime mode</h3><p>Automatically activate Zen Shield during your bedtime hours to protect your sleep.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head"><h2 class="display-md">In the app</h2></div>
+      <div class="grid grid-3">
+        {gallery.map((s) => <Shot file={s.file} alt={s.alt} caption={s.caption} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section--tight">
+    <div class="container">
+      <div class="card measure" style="margin-inline:auto">
+        <h3 style="font-family:var(--serif);font-weight:400;font-size:1.4rem">An honest note on blocking</h3>
+        <p style="margin-top:10px">
+          Zen Shield is designed to add friction and protect your focus. It is not an unbreakable
+          lock — a determined user can still find ways around any on-device blocker. An optional
+          strict mode (Device Admin) adds a throttled device lock after repeated bypass attempts,
+          but it’s never on by default, and emergency calls always stay available.
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>

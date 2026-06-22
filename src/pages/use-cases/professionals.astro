@@ -1,0 +1,50 @@
+---
+import Base from "../../layouts/Base.astro";
+import Phone from "../../components/Phone.astro";
+import DownloadCta from "../../components/DownloadCta.astro";
+import { withBase } from "../../config.mjs";
+---
+
+<Base
+  title="KaiZenly+ for professionals"
+  path="/use-cases/professionals/"
+  description="How professionals use KaiZenly+: protect deep-work blocks with Zen Shield, keep messaging apps available, build consistent routines, and reflect — local-first, with no tracking."
+>
+  <section class="section">
+    <div class="container split split--reverse">
+      <div>
+        <span class="eyebrow">For professionals</span>
+        <h1 class="display-lg" style="margin-top:10px">Deep work, on your terms</h1>
+        <p class="lede" style="margin-top:16px">
+          Carve out distraction-free blocks for focused work, keep the communication apps you need
+          available, and build the daily routines that keep you steady — all without a server, a
+          login, or anyone tracking how you work.
+        </p>
+        <div class="btn-row" style="margin-top:24px">
+          <DownloadCta />
+        </div>
+      </div>
+      <div class="split-media">
+        <Phone file="42_focus_setup_light_full.webp" alt="Focus session setup with timer and allowed apps" eager />
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--surface);border-block:1px solid var(--hairline)">
+    <div class="container">
+      <div class="section-head"><h2 class="display-md">Built for a focused work life</h2></div>
+      <div class="grid grid-3">
+        <article class="card"><h3>Deep-work blocks</h3><p>Schedule recurring focus windows so the hard work has a protected place in your day.</p></article>
+        <article class="card"><h3>Stay reachable</h3><p>Allow messaging or your dialer during focus so you’re never fully cut off.</p></article>
+        <article class="card"><h3>Keep routines</h3><p>Track keystone habits — exercise, planning, shutdown rituals — with calm reminders.</p></article>
+        <article class="card"><h3>Protect your evenings</h3><p>Bedtime mode activates Zen Shield so work doesn’t bleed into your sleep.</p></article>
+        <article class="card"><h3>Reflect &amp; reset</h3><p>A quick journal entry and mood check-in help you notice burnout early.</p></article>
+        <article class="card"><h3>Private by default</h3><p>Your focus and reflection data stays on your device — no workplace or vendor visibility.</p></article>
+      </div>
+      <div class="btn-row" style="margin-top:32px">
+        <a class="btn btn-secondary" href={withBase("/insights/")}>See insights</a>
+        <a class="btn btn-ghost" href={withBase("/use-cases/students/")}>For students →</a>
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,55 @@
+---
+import Base from "../layouts/Base.astro";
+import Phone from "../components/Phone.astro";
+import Shot from "../components/Shot.astro";
+import DownloadCta from "../components/DownloadCta.astro";
+import { withBase } from "../config.mjs";
+
+const gallery = [
+  { file: "28_journal_filled_dark.webp", alt: "Journal entry with a Great mood, tags and prompts", caption: "Tags and prompts" },
+  { file: "30_journal_template_gratitude.webp", alt: "Gratitude journal template with prompts", caption: "Guided templates" },
+  { file: "10_journal_empty_state.webp", alt: "Empty journal with a mood picker and start with one honest line", caption: "Start with one line" },
+];
+---
+
+<Base
+  title="Journal & Mood"
+  path="/journal/"
+  description="Reflect with mood-aware journaling in KaiZenly+: tags, activities, gratitude and prompt templates, optional photos and voice notes, full-text search, and Markdown export — all stored privately on your device."
+>
+  <section class="section">
+    <div class="container split">
+      <div>
+        <span class="eyebrow">Journal &amp; Mood</span>
+        <h1 class="display-lg" style="margin-top:10px">A private space to reflect</h1>
+        <p class="lede" style="margin-top:16px">
+          Write an honest line or a long entry. Add a mood check-in, tags, and activities, or follow
+          a gentle prompt template. Everything stays on your device — journals are personal, and
+          KaiZenly+ treats them that way.
+        </p>
+        <ul class="feature-list" style="margin-top:16px">
+          <li>Mood check-ins scored 1–5 with labels, woven into the journal flow.</li>
+          <li>Tags, activities, and structured prompt templates (like gratitude).</li>
+          <li>Optional photos and voice notes, stored in app-private storage.</li>
+          <li>Full-text search and Markdown export of all your entries.</li>
+        </ul>
+        <div class="btn-row" style="margin-top:24px">
+          <DownloadCta />
+          <a class="btn btn-secondary" href={withBase("/insights/")}>Turn it into insights</a>
+        </div>
+      </div>
+      <div class="split-media">
+        <Phone file="29_journal_filled_light.webp" alt="Journal entry with a Great mood and tags" eager />
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--surface);border-block:1px solid var(--hairline)">
+    <div class="container">
+      <div class="section-head"><h2 class="display-md">Honest, gentle, and yours</h2></div>
+      <div class="grid grid-4">
+        {gallery.map((s) => <Shot file={s.file} alt={s.alt} caption={s.caption} />)}
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,72 @@
+---
+import Base from "../layouts/Base.astro";
+import Phone from "../components/Phone.astro";
+import DownloadCta from "../components/DownloadCta.astro";
+import { withBase } from "../config.mjs";
+import { featureGroups } from "../data/app.mjs";
+
+const media = {
+  habits: { file: "43_habits_list_progress_light.webp", alt: "Habits dashboard with progress bars", link: "/habits/" },
+  focus: { file: "42_focus_setup_light_full.webp", alt: "Focus session setup with allowed apps", link: "/zen-shield/" },
+  journal: { file: "29_journal_filled_light.webp", alt: "Journal entry with a Great mood and tags", link: "/journal/" },
+  insights: { file: "13_insights_empty_dark.webp", alt: "Insights with a mood trend and a mood donut", link: "/insights/" },
+  backup: { file: "51_create_full_backup_dialog_light.webp", alt: "Create full backup dialog with password fields", link: "/backup/" },
+  routines: { file: "12_insights_filled_light_scroll.webp", alt: "Scheduled focus window and bedtime mode", link: "/zen-shield/" },
+};
+---
+
+<Base
+  title="Features"
+  path="/features/"
+  softwareApp={true}
+  description="Everything KaiZenly+ does: Zen Shield focus, habits, journaling, mood tracking, insights, scheduled focus, bedtime mode, encrypted backup, and a home-screen widget."
+>
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Features</span>
+        <h1 class="display-lg" style="margin-top:10px">One calm app for the whole routine</h1>
+        <p class="lede">
+          KaiZenly+ combines the tools that usually live in five separate apps — focus, habits,
+          journaling, mood, insights, and backup — into one private, local-first experience.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {featureGroups.map((g, i) => {
+    const m = media[g.id];
+    return (
+      <section class="section" style={i % 2 === 1 ? "background:var(--surface);border-block:1px solid var(--hairline)" : ""}>
+        <div class={`container split ${i % 2 === 1 ? "split--reverse" : ""}`}>
+          <div>
+            <span class="eyebrow">{g.title}</span>
+            <h2 class="display-md" style="margin-top:10px">{g.summary}</h2>
+            <ul class="feature-list" style="margin-top:16px">
+              {g.points.map((p) => <li>{p}</li>)}
+            </ul>
+            {m?.link && (
+              <div class="btn-row" style="margin-top:22px">
+                <a class="btn btn-secondary" href={withBase(m.link)}>Learn more</a>
+              </div>
+            )}
+          </div>
+          <div class="split-media">
+            {m && <Phone file={m.file} alt={m.alt} />}
+          </div>
+        </div>
+      </section>
+    );
+  })}
+
+  <section class="section--tight">
+    <div class="container center" style="max-width:640px">
+      <h2 class="display-md">Ready to try it?</h2>
+      <p class="lede" style="margin-top:14px">Free at launch — coming soon to Google Play, with everything kept on your device.</p>
+      <div class="btn-row" style="justify-content:center;margin-top:22px">
+        <DownloadCta size="lg" />
+        <a class="btn btn-secondary btn-lg" href={withBase("/screenshots/")}>See screenshots</a>
+      </div>
+    </div>
+  </section>
+</Base>

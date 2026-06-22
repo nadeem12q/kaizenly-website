@@ -1,0 +1,17 @@
+---
+import { download } from "../data/app.mjs";
+
+// Renders the primary call-to-action. While the app is not live it is a
+// non-clickable "Coming soon" button; once `download.live` is true (with a
+// Play Store URL) it becomes a real "Get it on Google Play" link.
+const { size = "", variant = "primary", class: klass = "" } = Astro.props;
+const sizeCls = size === "lg" ? "btn-lg" : "";
+const isLive = download.live && download.playStoreUrl;
+const classes = `btn btn-${variant} ${sizeCls} ${klass}`.trim();
+---
+
+{isLive ? (
+  <a class={classes} href={download.playStoreUrl} rel="noopener">{download.liveLabel}</a>
+) : (
+  <span class={`${classes} is-soon`} role="link" aria-disabled="true">{download.comingSoonLabel}</span>
+)}

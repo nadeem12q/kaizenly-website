@@ -1,0 +1,10 @@
+---
+import Phone from "./Phone.astro";
+
+const { file, alt, caption } = Astro.props;
+---
+
+<figure class="shot">
+  <Phone file={file} alt={alt} />
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>

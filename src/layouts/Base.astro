@@ -1,0 +1,155 @@
+---
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE, absUrl, withBase } from "../config.mjs";
+import { app } from "../data/app.mjs";
+
+const {
+  title,
+  description = SITE.shortDescription,
+  path = "/",
+  ogImage = "/og-image.png",
+  softwareApp = false,
+  jsonLd = [],
+} = Astro.props;
+
+const pageTitle = title ? `${title} — ${SITE.name}` : `${SITE.name} — ${app.tagline}`;
+const canonical = absUrl(path);
+const ogImageUrl = absUrl(ogImage);
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE.name,
+  alternateName: app.alternateName,
+  url: absUrl("/"),
+  description: SITE.shortDescription,
+  inLanguage: "en",
+};
+
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: app.name,
+  alternateName: app.alternateName,
+  operatingSystem: "Android 8.0+",
+  applicationCategory: "ProductivityApplication",
+  softwareVersion: app.version,
+  description:
+    "KaiZenly+ is a privacy-first Android app for habit tracking, focus sessions (Zen Shield), journaling, mood tracking, routines, and on-device insights. Local-first, no account, no tracking.",
+  url: absUrl("/"),
+  downloadUrl: absUrl("/download/"),
+  installUrl: absUrl("/download/"),
+  privacyPolicy: absUrl("/privacy/"),
+  isAccessibleForFree: true,
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+  author: {
+    "@type": "Person",
+    name: "Solo student developer",
+  },
+};
+
+const schemas = [websiteSchema, ...(softwareApp ? [softwareSchema] : []), ...jsonLd];
+---
+
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Theme: set before paint to avoid flash -->
+    <script is:inline>
+      (function () {
+        try {
+          var t = localStorage.getItem("kz-theme");
+          if (t === "light" || t === "dark") {
+            document.documentElement.setAttribute("data-theme", t);
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <meta name="theme-color" content="#0f0f0f" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f2f2f2" media="(prefers-color-scheme: light)" />
+
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href={withBase("/favicon.svg")} />
+    <link rel="apple-touch-icon" href={withBase("/icon-180.png")} />
+
+    <!-- Fonts: serif display (EB Garamond) + Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap"
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    {schemas.map((s) => (
+      <script type="application/ld+json" set:html={JSON.stringify(s)} />
+    ))}
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+
+    <!-- Minimal interactivity: theme toggle + mobile nav. Content is fully static. -->
+    <script is:inline>
+      (function () {
+        var root = document.documentElement;
+        function current() {
+          return root.getAttribute("data-theme") === "light" ? "light" : "dark";
+        }
+        var toggle = document.querySelector("[data-theme-toggle]");
+        if (toggle) {
+          toggle.addEventListener("click", function () {
+            var next = current() === "light" ? "dark" : "light";
+            root.setAttribute("data-theme", next);
+            try { localStorage.setItem("kz-theme", next); } catch (e) {}
+          });
+        }
+        var navToggle = document.querySelector("[data-nav-toggle]");
+        var navLinks = document.querySelector("[data-nav-links]");
+        if (navToggle && navLinks) {
+          navToggle.addEventListener("click", function () {
+            var open = navLinks.classList.toggle("open");
+            navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+          });
+          navLinks.addEventListener("click", function (e) {
+            if (e.target.tagName === "A") navLinks.classList.remove("open");
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>

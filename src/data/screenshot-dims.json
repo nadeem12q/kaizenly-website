@@ -1,0 +1,218 @@
+{
+  "01_onboarding_welcome.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "02_onboarding_goals_picker_empty.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "03_onboarding_goals_selected.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "04_onboarding_permissions_step1_usage.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "05_onboarding_permissions_step2_accessibility.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "06_onboarding_permissions_step8_battery.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "07_habits_empty_state.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "08_habit_create_sheet.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "09_habits_with_one_habit.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "10_journal_empty_state.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "11_insights_empty_light.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "12_insights_filled_light_scroll.webp": {
+    "w": 1080,
+    "h": 2982
+  },
+  "13_insights_empty_dark.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "14_insights_filled_dark.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "15_focus_setup_light_whatsapp.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "16_focus_setup_light_no_apps.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "17_habits_list_3_light.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "18_habit_detail_water_light.webp": {
+    "w": 1080,
+    "h": 6556
+  },
+  "19_focus_setup_dark_3_3.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "20_focus_allowed_apps_picker.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "21_scheduled_tasks_empty_dark.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "22_habits_empty_dark.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "23_habit_create_basic_dark.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "24_habit_reminder_picker_dark.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "25_habit_create_count_dark.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "26_habit_reminder_count_dark.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "27_habit_detail_count_dark.webp": {
+    "w": 1080,
+    "h": 7040
+  },
+  "28_journal_filled_dark.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "29_journal_filled_light.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "30_journal_template_gratitude.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "31_onboarding_step5_call_safety.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "32_onboarding_step6_notifications.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "33_onboarding_step7_battery.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "34_scheduled_tasks_empty_light.webp": {
+    "w": 1080,
+    "h": 5625
+  },
+  "35_scheduled_tasks_with_bedtime.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "36_focus_window_form_light.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "37_focus_session_running_00_55.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "38_focus_protected_wall.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "39_focus_complete_celebration.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "40_focus_session_pomodoro_whatsapp.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "41_focus_scheduled_with_bedtime_dark.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "42_focus_setup_light_full.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "43_habits_list_progress_light.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "44_settings_full_dark.webp": {
+    "w": 1080,
+    "h": 7519
+  },
+  "45_google_drive_connect_dialog.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "46_local_backup_screen_dark.webp": {
+    "w": 1080,
+    "h": 2896
+  },
+  "47_drive_backup_progress.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "49_replace_data_confirm.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "50_insights_habits_comparison_dark.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "51_create_full_backup_dialog_light.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "52_insights_filled_light_clean.webp": {
+    "w": 1080,
+    "h": 1824
+  },
+  "53_focus_session_light_whatsapp.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "54_focus_protected_wall_light.webp": {
+    "w": 1080,
+    "h": 2400
+  },
+  "55_home_widget_habits.webp": {
+    "w": 1080,
+    "h": 2400
+  }
+}

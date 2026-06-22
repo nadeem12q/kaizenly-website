@@ -1,0 +1,32 @@
+---
+import { withBase } from "../config.mjs";
+import dims from "../data/screenshot-dims.json";
+
+const { file, alt, eager = false, small = false, class: klass = "" } = Astro.props;
+const src = withBase(`/screenshots/${file}`);
+
+const d = dims[file] || { w: 1080, h: 2400 };
+const ratio = d.w / d.h;
+// A normal phone capture sits around 0.45 (9:20). Anything much taller is a
+// full-length "scroll" capture — show it inside a fixed phone frame that the
+// reader can scroll, so nothing gets cropped.
+const tall = ratio < 0.42;
+// For framed (non-tall) shots, lock the frame to the image's real ratio so
+// object-fit never crops. Clamp very wide/short shots to a sane phone shape.
+const frameAr = tall ? "1080 / 2400" : `${d.w} / ${d.h}`;
+---
+
+<div
+  class={`phone ${small ? "phone--sm" : ""} ${tall ? "phone--tall" : ""} ${klass}`}
+  style={`--ar:${frameAr}`}
+>
+  <img
+    src={src}
+    alt={alt}
+    width={d.w}
+    height={d.h}
+    loading={eager ? "eager" : "lazy"}
+    decoding={eager ? "auto" : "async"}
+    fetchpriority={eager ? "high" : "auto"}
+  />
+</div>

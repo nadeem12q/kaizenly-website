@@ -1,0 +1,94 @@
+---
+import Base from "../layouts/Base.astro";
+import { withBase } from "../config.mjs";
+import { privacy, storage } from "../data/app.mjs";
+
+const updated = "June 21, 2026";
+---
+
+<Base
+  title="Privacy"
+  path="/privacy/"
+  description="KaiZenly+ is local-first: no developer server, no backend, no mandatory login, and no tracking or analytics SDKs. Your data stays on your device in an encrypted database. This page explains exactly what is and isn't stored."
+>
+  <section class="section">
+    <div class="container" style="max-width:760px">
+      <span class="eyebrow">Privacy</span>
+      <h1 class="display-lg" style="margin-top:10px">Your data stays on your device</h1>
+      <p class="lede" style="margin-top:16px">
+        Self-improvement data is deeply personal — habits, moods, and journals reveal a lot about
+        your life. KaiZenly+ is built so that data belongs entirely to you. Every claim below is
+        verifiable against the app’s source code and documentation.
+      </p>
+
+      <div class="row-list" style="margin-top:32px">
+        {privacy.facts.map((f) => (
+          <div class="row" style="grid-template-columns:1fr">
+            <p style="margin:0;color:var(--ink);font-size:1rem">{f}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="prose" style="margin-top:48px">
+        <h2 class="display-sm serif">What is stored, and where</h2>
+        <p>{storage.database}</p>
+        <p>{storage.preferences}</p>
+        <p>{storage.backupFormat}</p>
+        <p>{storage.androidAutoBackup}</p>
+
+        <h2 class="display-sm serif">What the developer receives</h2>
+        <p>
+          Nothing. There is no developer server or backend that your data flows to. The app has no
+          analytics SDK, no advertising identifiers, and no background reporting. Normal use does
+          not require a network connection at all.
+        </p>
+
+        <h2 class="display-sm serif">Google Drive backup</h2>
+        <p>
+          Google Drive backup is <strong>optional, manual, and opt-in</strong> (and currently still
+          in testing). When you enable it, you link your own Google account and the app uploads one
+          already-encrypted backup file to your private Drive app folder (<code>appDataFolder</code>),
+          which is hidden from your normal Drive file list and only accessible to KaiZenly+. Backups
+          go to <strong>your</strong> Drive — never to the developer. The Google OAuth client IDs
+          only identify the app to Google; they don’t route data anywhere else.
+        </p>
+
+        <h2 class="display-sm serif">Focus &amp; Zen Shield data</h2>
+        <p>
+          The Accessibility service used during active focus sessions reads only package and class
+          names for enforcement. It does <strong>not</strong> read message text, passwords,
+          keystrokes, window titles, or screen content. Blocked attempts and app rules stay in the
+          local encrypted database.
+        </p>
+
+        <h2 class="display-sm serif">Journal media</h2>
+        <p>
+          Photos and voice notes you add to journal entries are copied into app-private storage and
+          are never shared.
+        </p>
+
+        <h2 class="display-sm serif">What we do <em>not</em> claim</h2>
+        <p>To keep this page honest, here is what KaiZenly+ does <strong>not</strong> say about itself:</p>
+        <ul class="feature-list">
+          <li>It is <strong>not</strong> open source — the repository is private, all rights reserved.</li>
+          <li>It is <strong>not</strong> “end-to-end encrypted” or “military-grade.” It uses on-device SQLCipher database encryption and AES-256-GCM encrypted backups.</li>
+          <li>It does <strong>not</strong> have “zero permissions” — focus protection genuinely needs some permissions, each explained on the <a href={withBase("/permissions/")}>Permissions page</a>.</li>
+          <li>It does <strong>not</strong> provide medical, therapy, or mental-health treatment.</li>
+        </ul>
+
+        <h2 class="display-sm serif">Changes &amp; future features</h2>
+        <p>
+          If server, backend, AI, or MCP features are ever added, this page will be updated before
+          any data behavior changes. Those features are only a possible future direction today.
+        </p>
+
+        <p class="muted" style="margin-top:32px;font-size:0.88rem">Last updated: {updated}</p>
+      </div>
+
+      <div class="btn-row" style="margin-top:32px">
+        <a class="btn btn-secondary" href={withBase("/permissions/")}>See all permissions</a>
+        <a class="btn btn-ghost" href={withBase("/faq/")}>Privacy FAQ →</a>
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,68 @@
+---
+import Base from "../layouts/Base.astro";
+import Phone from "../components/Phone.astro";
+import Shot from "../components/Shot.astro";
+import DownloadCta from "../components/DownloadCta.astro";
+import { withBase } from "../config.mjs";
+
+const gallery = [
+  { file: "09_habits_with_one_habit.webp", alt: "Habits list with a single habit to start", caption: "Start with one habit" },
+  { file: "08_habit_create_sheet.webp", alt: "New habit bottom sheet, Task type", caption: "Create a Task habit" },
+  { file: "25_habit_create_count_dark.webp", alt: "New count habit Drink Water with a target of ten", caption: "Or a Count goal" },
+  { file: "18_habit_detail_water_light.webp", alt: "Water habit detail with score, calendar and streaks", caption: "Per-habit analytics" },
+  { file: "27_habit_detail_count_dark.webp", alt: "Count habit detail showing ten of ten and stats", caption: "Count progress" },
+  { file: "55_home_widget_habits.webp", alt: "Home screen Today’s habits widget", caption: "Home-screen widget" },
+];
+---
+
+<Base
+  title="Habits"
+  path="/habits/"
+  description="Build Task and Count habits in KaiZenly+ with custom reminders, streaks, calendar heatmaps, per-habit analytics, and a one-tap home-screen widget — without pressure or perfectionism."
+>
+  <section class="section">
+    <div class="container split split--reverse">
+      <div>
+        <span class="eyebrow">Habits</span>
+        <h1 class="display-lg" style="margin-top:10px">Consistency, not perfection</h1>
+        <p class="lede" style="margin-top:16px">
+          Habits are the heart of Kaizen — small daily steps that compound. KaiZenly+ tracks them
+          calmly, with gentle reminders and clear progress, so building a routine feels achievable
+          rather than stressful.
+        </p>
+        <ul class="feature-list" style="margin-top:16px">
+          <li>Two types: simple <strong>Task</strong> habits or <strong>Count</strong> goals with targets and units.</li>
+          <li>Custom reminder times, snooze, and quick notification actions (Yes / No / +1).</li>
+          <li>Streaks, best streaks, consistency %, and calendar heatmaps.</li>
+          <li>Subtasks, repeat schedules, tags, and categories.</li>
+        </ul>
+        <div class="btn-row" style="margin-top:24px">
+          <DownloadCta />
+        </div>
+      </div>
+      <div class="split-media">
+        <Phone file="43_habits_list_progress_light.webp" alt="Habits dashboard with a greeting, calendar strip and three habits with progress" eager />
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--surface);border-block:1px solid var(--hairline)">
+    <div class="container">
+      <div class="section-head"><h2 class="display-md">From a single tap to long-term streaks</h2></div>
+      <div class="grid grid-3">
+        {gallery.map((s) => <Shot file={s.file} alt={s.alt} caption={s.caption} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section--tight">
+    <div class="container center" style="max-width:600px">
+      <h2 class="display-md">Start one habit today</h2>
+      <p class="lede" style="margin-top:14px">That’s the whole idea — one small, calm step.</p>
+      <div class="btn-row" style="justify-content:center;margin-top:22px">
+        <DownloadCta size="lg" />
+        <a class="btn btn-ghost" href={withBase("/insights/")}>See your progress →</a>
+      </div>
+    </div>
+  </section>
+</Base>

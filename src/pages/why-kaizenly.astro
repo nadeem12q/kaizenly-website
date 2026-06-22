@@ -1,0 +1,59 @@
+---
+import Base from "../layouts/Base.astro";
+import DownloadCta from "../components/DownloadCta.astro";
+import { withBase } from "../config.mjs";
+
+const rows = [
+  { feature: "Focus / app blocking", kz: "Zen Shield with allowed apps, scheduled focus, bedtime mode", typical: "Often the whole app" },
+  { feature: "Habits", kz: "Task + Count habits, streaks, per-habit analytics, widget", typical: "Sometimes, as a separate app" },
+  { feature: "Journaling & mood", kz: "Built in, with templates and tags", typical: "Usually a different app" },
+  { feature: "Insights", kz: "On-device mood, habit, and focus analytics", typical: "Often cloud-processed" },
+  { feature: "Account / login", kz: "Not required", typical: "Frequently required" },
+  { feature: "Server / backend", kz: "None — local-first", typical: "Common" },
+  { feature: "Tracking / ads", kz: "None", typical: "Common in free apps" },
+  { feature: "Backup", kz: "Encrypted local + optional your-own Google Drive", typical: "Often cloud-only, vendor-held" },
+  { feature: "Price", kz: "Free at launch", typical: "Varies; often subscription" },
+];
+---
+
+<Base
+  title="Why KaiZenly+"
+  path="/why-kaizenly/"
+  description="Why choose KaiZenly+: one local-first app that combines focus, habits, journaling, mood, insights, and encrypted backup — without a server, login, tracking, or ads."
+>
+  <section class="section">
+    <div class="container" style="max-width:880px">
+      <span class="eyebrow">Why KaiZenly+</span>
+      <h1 class="display-lg" style="margin-top:10px">One private app instead of five</h1>
+      <p class="lede" style="margin-top:16px">
+        Most tools do one thing — a blocker, a habit tracker, a journal — and many pull your data to
+        a server. KaiZenly+ brings these together in one calm, local-first place. Here’s how it
+        generally compares to typical single-purpose apps.
+      </p>
+
+      <div class="row-list" style="margin-top:32px">
+        <div class="row" style="grid-template-columns:1fr 1.3fr 1fr;background:var(--surface-highlight)">
+          <strong>Area</strong><strong>KaiZenly+</strong><strong>Typical single-purpose app</strong>
+        </div>
+        {rows.map((r) => (
+          <div class="row" style="grid-template-columns:1fr 1.3fr 1fr">
+            <span style="font-weight:500">{r.feature}</span>
+            <span class="secondary">{r.kz}</span>
+            <span class="muted">{r.typical}</span>
+          </div>
+        ))}
+      </div>
+
+      <p class="note" style="margin-top:20px">
+        “Typical” is a general description of common single-purpose apps, not a claim about any
+        specific product. KaiZenly+ doesn’t claim to be “the best” — just calmer, more private, and
+        more complete for people who want all of this in one place.
+      </p>
+
+      <div class="btn-row" style="margin-top:32px">
+        <DownloadCta />
+        <a class="btn btn-secondary" href={withBase("/features/")}>See features</a>
+      </div>
+    </div>
+  </section>
+</Base>
