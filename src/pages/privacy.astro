@@ -42,6 +42,25 @@ const updated = "June 21, 2026";
           analytics SDK, no advertising identifiers, and no background reporting. Normal use does
           not require a network connection at all.
         </p>
+        <p>
+          This isn’t a corporate product with a data pipeline behind it — it’s built by one solo
+          student developer with no company server to run. Keeping everything on your device is the
+          honest, simplest way to protect your data: there is no central place for it to leak from,
+          because it never leaves your phone in the first place.
+        </p>
+
+        <h2 class="display-sm serif">Encryption, in plain words</h2>
+        <p>
+          Your data is <strong>encrypted</strong>. You don’t need to know the technical details —
+          what matters is that the app, the database on your device, your backups, and the backup
+          file that gets sent to Drive are all encrypted.
+        </p>
+        <ul class="feature-list">
+          <li>The app’s <strong>data on your device</strong> is encrypted.</li>
+          <li>Your <strong>local backups</strong> are encrypted.</li>
+          <li>The <strong>backup file sent to Google Drive</strong> is already encrypted before it leaves your phone.</li>
+          <li>A backup is unlocked by a <strong>password only you know</strong> — never stored, never sent anywhere.</li>
+        </ul>
 
         <h2 class="display-sm serif">Google Drive backup</h2>
         <p>
@@ -67,13 +86,12 @@ const updated = "June 21, 2026";
           are never shared.
         </p>
 
-        <h2 class="display-sm serif">What we do <em>not</em> claim</h2>
-        <p>To keep this page honest, here is what KaiZenly+ does <strong>not</strong> say about itself:</p>
+        <h2 class="display-sm serif">Honest about what it is</h2>
+        <p>To keep this page <strong>honest</strong>, a few things KaiZenly+ is clear about:</p>
         <ul class="feature-list">
-          <li>It is <strong>not</strong> open source — the repository is private, all rights reserved.</li>
-          <li>It is <strong>not</strong> “end-to-end encrypted” or “military-grade.” It uses on-device SQLCipher database encryption and AES-256-GCM encrypted backups.</li>
+          <li>The repository is <strong>private</strong> — all rights reserved.</li>
           <li>It does <strong>not</strong> have “zero permissions” — focus protection genuinely needs some permissions, each explained on the <a href={withBase("/permissions/")}>Permissions page</a>.</li>
-          <li>It does <strong>not</strong> provide medical, therapy, or mental-health treatment.</li>
+          <li>It is a <strong>focus and habit tool</strong> — not medical, therapy, or mental-health treatment.</li>
         </ul>
 
         <h2 class="display-sm serif">Changes &amp; future features</h2>

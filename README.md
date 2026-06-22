@@ -124,7 +124,10 @@ above and add a `CNAME` file in `public/`.
 ## Honesty / content rules baked in
 
 - No fake reviews, ratings, download counts, or Play Store badge (no public listing yet).
-- Not described as "open source" (repo is private), "end-to-end encrypted", or "zero permissions".
-- Encryption claims (SQLCipher DB, AES-256-GCM backups) match the app's README/source.
+- Not described as "open source" (repo is private). Security is framed positively by what it has,
+  not by what it lacks — avoid volunteering "not end-to-end encrypted" style disclaimers.
+- App is closed source: state only that data/database/backups are "encrypted" — do not name
+  specific algorithms (no SQLCipher / AES-256-GCM / PBKDF2) anywhere public, including llms.txt
+  and app-data.json.
 - Future AI / backend / MCP features are presented only as possibilities, never current features.
 - Backup screenshots with a visible Google account email are masked (46, 47); one was excluded (48).

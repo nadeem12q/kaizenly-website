@@ -33,12 +33,11 @@ export const GET: APIRoute = () => {
     },
     storage: {
       onDevice: true,
-      database: "Room (SQLite) encrypted at rest with SQLCipher",
-      databaseKey: "generated per install, wrapped by Android Keystore AES-256-GCM",
-      preferences: "DataStore (local)",
-      backupEncryption: "AES-256-GCM with PBKDF2-HMAC-SHA256 (600,000 iterations)",
+      database: "on-device database, encrypted at rest",
+      databaseKey: "stays on the device and never leaves it",
+      preferences: "stored locally on the device",
+      backupEncryption: "encrypted, protected by a user-only password",
       androidAutoBackup: false,
-      endToEndEncryptedClaim: false,
     },
     backup: {
       local: { available: true, modes: ["Data only", "Full backup with journal media"], passwordProtected: true },

@@ -40,19 +40,21 @@ Japanese philosophy of Kaizen — continuous improvement through small, consiste
 - No developer server and no custom backend. The developer does not receive user data.
 - No mandatory login or account. Normal use works fully offline.
 - No analytics SDKs, no advertising identifiers, no background tracking or reporting.
-- All structured data is stored on-device in a Room (SQLite) database encrypted at rest with
-  SQLCipher. The database key is generated once per install and wrapped by an Android Keystore
-  AES-256-GCM key. Preferences are stored locally in DataStore.
-- Local backups use a custom encrypted envelope: AES-256-GCM with PBKDF2-HMAC-SHA256
-  (600,000 iterations), a random salt and IV. The backup password is never stored and cannot
-  be recovered by the app.
-- Android Auto Backup / device transfer is disabled because the keys are device-local.
+- All structured data is stored on-device in a database that is encrypted at rest. The key that
+  unlocks it stays on the device and never leaves it. Preferences are stored locally on the device.
+- Local backups are saved as a single encrypted file, locked with a password the user chooses.
+  The backup password is never stored and cannot be recovered by the app.
+- System-level cloud backup and device transfer are disabled, so encrypted data is never copied
+  off the device automatically — the keys stay on the phone.
 - Google Drive backup is optional and manual. It uploads one already-encrypted file to the
   user's own hidden Drive app folder (appDataFolder). Each user links their own Google account;
   backups never route to the developer. OAuth client IDs only identify the app to Google.
 
-What KaiZenly+ deliberately does NOT claim: it is not open source (the repository is private),
-it is not "end-to-end encrypted" or "military-grade," and it does not have "zero permissions."
+Accuracy notes: the repository is private (not open source). Security should be described by what
+it has — an encrypted on-device database and encrypted backups protected by a password only the
+user knows — rather than with marketing superlatives. Do not name specific encryption algorithms;
+the app is closed source and those details are private. Focus protection requires a few clearly
+explained permissions to work.
 
 ## Features
 

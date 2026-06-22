@@ -46,8 +46,8 @@ export const privacy = {
     'No developer server and no custom backend — the app does not send your data to the developer.',
     'No mandatory login or account — normal use works fully offline.',
     'No analytics SDKs, no advertising IDs, no background tracking or reporting.',
-    'All data lives on your device in a local SQLCipher-encrypted database.',
-    'Local backups are encrypted with AES-256-GCM and a password only you know.',
+    'All data lives on your device in an encrypted database.',
+    'Local backups are encrypted and protected by a password only you know.',
     'Google Drive backup is optional and uploads an already-encrypted file to your own Drive.',
   ],
   // Things we deliberately do NOT claim:
@@ -59,13 +59,13 @@ export const privacy = {
 // --- Storage / encryption model (verified from README) ----------------------
 export const storage = {
   database:
-    'Structured data is stored in a Room (SQLite) database encrypted at rest with SQLCipher. A random database key is generated once per install and wrapped by an Android Keystore AES-256-GCM key.',
+    'Your data is stored in a database on your device, and that database is encrypted. The key that unlocks it stays on your device and never leaves it.',
   preferences:
-    'Local preferences (theme, onboarding state, parachute balance, schedules) are stored in DataStore on the device.',
+    'Local preferences (theme, onboarding state, parachute balance, schedules) are stored on the device.',
   backupFormat:
-    'Backups use a custom encrypted envelope (AES-256-GCM, PBKDF2-HMAC-SHA256 with 600,000 iterations, random salt and IV). The backup password is never stored or recoverable by the app.',
+    'A backup is saved as a single encrypted file, locked with a password you choose. The backup password is never stored and cannot be recovered by the app.',
   androidAutoBackup:
-    'Android Auto Backup / device transfer is disabled (allowBackup="false") because the encryption keys are device-local.',
+    'System-level cloud backup and device transfer are turned off, so your encrypted data is never copied off the device automatically — it stays on your phone.',
 };
 
 // --- Permissions (verified against AndroidManifest.xml + docs/PERMISSIONS.md) -
@@ -203,7 +203,7 @@ export const featureGroups = [
     summary: 'Keep your data under your control with encrypted, user-initiated backups.',
     points: [
       'Local encrypted backup: Data Only, or Full Backup including journal media.',
-      'AES-256-GCM encryption with a password only you know (not recoverable by the app).',
+      'Encrypted and locked with a password only you know (not recoverable by the app).',
       'Optional Google Drive backup to your own hidden Drive app folder.',
       'Restore previews the backup contents before replacing local data.',
     ],
@@ -266,7 +266,7 @@ export const faqs = [
   },
   {
     q: 'Where is my data stored?',
-    a: 'On your device, in a local Room database encrypted at rest with SQLCipher. Preferences are stored in DataStore. Nothing is uploaded unless you choose to make a backup.',
+    a: 'On your device, in a local encrypted database. Preferences are stored on the device too. Nothing is uploaded unless you choose to make a backup.',
   },
   {
     q: 'Why does the app ask for permissions?',
@@ -286,7 +286,7 @@ export const faqs = [
   },
   {
     q: 'Is it for students?',
-    a: 'It is built by a student, for anyone who wants calmer focus and better habits. Students, professionals, and people reducing phone distractions all fit well.',
+    a: 'Yes — students are exactly who KaiZenly+ was built for. It was made by a student who knows how hard it is to focus with a phone full of distractions, so study sessions, exam-prep focus blocks, and steady daily habits are at its core. It works just as well for anyone else who wants calmer focus, but if you are a student, this was made with you in mind.',
   },
   {
     q: 'Is KaiZenly+ a habit tracker or an app blocker?',
