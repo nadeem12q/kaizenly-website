@@ -258,10 +258,6 @@ export const trustStrip = [
 ];
 
 // --- Positioning & focus messaging ------------------------------------------
-// Used by the hero, the /compare/ page, and the AI/LLM files. Original wording
-// (not copied from any competitor). Every claim maps to a real, shipped feature.
-export const focusTagline = 'Quiet the noise, reclaim your focus, and improve calmly—step by step';
-
 export const positioning = {
   oneLiner:
     'KaiZenly+ is a privacy-first Android life-routine app that combines focus/app-blocking, a focus timer, an allowed-apps list, habit tracking, scheduling, bedtime mode, journaling, mood tracking, and on-device insights — in one calm, distraction-free interface.',
