@@ -45,7 +45,7 @@ const softwareSchema = {
   privacyPolicy: absUrl("/privacy-policy/"),
   isAccessibleForFree: true,
   keywords:
-    "habit tracker, focus app, Android productivity, app blocker, journaling app, mood tracker, screen time, privacy-first, local-first, no tracking, Zen Shield, daily routine, self-improvement, KaiZenly",
+    "habit tracker, focus app, Android productivity, app blocker, app blocker for Android, Blockit alternative, Zen Shield, Zen Shield app blocker, journaling app, mood tracker, screen time, screen time control, focus timer, privacy-first, local-first, no tracking, daily routine, self-improvement, KaiZenly",
   featureList:
     "Habit tracking with streaks and reminders, Zen Shield focus sessions with app blocking, Allowed-apps list for essential apps during focus, Scheduled focus windows and bedtime mode, Journal with mood check-ins and prompt templates, On-device insights with mood trends and habit stats, Local encrypted backup and optional Google Drive backup, Home-screen habit widget, No developer server, No mandatory login, No tracking or ads",
   screenshot: [
@@ -167,4 +167,10 @@ const schemas = [websiteSchema, ...(softwareApp ? [softwareSchema] : []), ...jso
             navToggle.setAttribute("aria-expanded", open ? "true" : "false");
           });
           navLinks.addEventListener("click", function (e) {
-            if (e.target.tagName === "A") navL
+            if (e.target.tagName === "A") navLinks.classList.remove("open");
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
