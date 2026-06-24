@@ -10,7 +10,7 @@ export const app = {
   alternateName: 'KaiZenly Plus',
   tagline: 'Quiet the noise, reclaim your focus, and improve calmly—step by step',
   shortTagline: 'Small steps. Better days.',
-  version: '0.1.1',
+  version: '1.0.0',
   platform: 'Android',
   minAndroid: 'Android 8.0 (API 26)',
   price: 'Free',
@@ -301,7 +301,7 @@ export const positioning = {
 export const faqs = [
   {
     q: 'Is KaiZenly+ free?',
-    a: 'Yes. KaiZenly+ is fully free at launch (version 0.1.1) and every feature is included. If server, backend, or AI features are added in the future, some of those may become paid — but nothing is paid today.',
+    a: 'Yes. KaiZenly+ is fully free at launch (version 1.0.0) and every feature is included. If server, backend, or AI features are added in the future, some of those may become paid — but nothing is paid today.',
   },
   {
     q: 'Does KaiZenly+ have a server or backend?',
