@@ -22,17 +22,22 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: SITE.name,
-  alternateName: app.alternateName,
+  alternateName: ["KaiZenly Plus", "KaiZenly", "Kaizenly", "Kaizenly Plus", "kaizenly+"],
   url: absUrl("/"),
   description: SITE.shortDescription,
   inLanguage: "en",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: { "@type": "EntryPoint", urlTemplate: absUrl("/?q={search_term_string}") },
+    "query-input": "required name=search_term_string",
+  },
 };
 
 const softwareSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   name: app.name,
-  alternateName: app.alternateName,
+  alternateName: ["KaiZenly Plus", "KaiZenly", "Kaizenly", "Kaizenly Plus", "kaizenly+"],
   operatingSystem: "Android 8.0+",
   applicationCategory: "ProductivityApplication",
   applicationSubCategory: "Habit Tracker, Focus App, Journal, Mood Tracker",
@@ -87,6 +92,7 @@ const schemas = [websiteSchema, ...(softwareApp ? [softwareSchema] : []), ...jso
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="generator" content={Astro.generator} />
     <meta name="google-site-verification" content="ejHezyBhrzbieh6OZO6HErap8Nu1Zi-b3Ov3p8z2Hko" />
+    <meta name="keywords" content="KaiZenly+, KaiZenly Plus, KaiZenly, Kaizenly, kaizenly+, app blocker, habit tracker, focus app, Android productivity, Zen Shield, Blockit alternative, journal app, mood tracker, screen time" />
 
     <!-- Theme: set before paint to avoid flash -->
     <script is:inline>
