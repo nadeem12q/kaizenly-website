@@ -2,7 +2,7 @@
 import Base from "../layouts/Base.astro";
 import { withBase } from "../config.mjs";
 
-const updated = "June 22, 2026";
+const updated = "June 23, 2026";
 ---
 
 <Base
@@ -85,19 +85,54 @@ const updated = "June 22, 2026";
         <p>
           The only third party involved is Google — and only if you choose to use Google Drive
           backup, through your own account. No data is sold or shared with advertisers, brokers, or
-          anyone else.
+          anyone else. This website is hosted on GitHub Pages (a Microsoft service); GitHub's own
+          privacy policy governs any server-level logs they may retain (such as IP addresses and
+          request timestamps). Those logs, if any, are outside the developer's control and are not
+          accessible to the developer.
+        </p>
+
+        <h2 class="display-sm serif">European Economic Area, UK, and Switzerland (GDPR)</h2>
+        <p>
+          Because KaiZenly+ collects no personal data, the developer has no data to process under
+          the General Data Protection Regulation (GDPR) or equivalent UK/Swiss legislation. Your
+          rights under those laws — including access, rectification, erasure, portability, and
+          restriction of processing — apply to any data held by the data controller. Since no data
+          is held by the developer, those requests are satisfied by design: there is nothing to
+          access, correct, export, or delete on the developer's side. For data stored on your own
+          device, you exercise those rights directly by using or uninstalling the app.
+        </p>
+
+        <h2 class="display-sm serif">California users (CCPA / CPRA)</h2>
+        <p>
+          Under the California Consumer Privacy Act (CCPA) and the California Privacy Rights Act
+          (CPRA), California residents have rights including the right to know what personal
+          information is collected, the right to delete it, and the right to opt out of its sale.
+          KaiZenly+ does not collect, sell, share, or disclose any personal information. There is
+          no personal information held by the developer to exercise rights against. No personal
+          information is sold or shared with third parties for cross-context behavioural advertising.
+        </p>
+
+        <h2 class="display-sm serif">Security</h2>
+        <p>
+          The developer takes reasonable technical measures to protect the app and its users. Your
+          on-device data is encrypted. Backup files are encrypted before leaving your device. The
+          app is built without any analytics or advertising SDKs that could introduce security risks
+          from third-party code. No developer-held data means there is no developer-side breach
+          risk for your personal information.
         </p>
 
         <h2 class="display-sm serif">Changes to this policy</h2>
         <p>
           If server, backend, AI, or MCP features are ever added, this policy will be updated before
-          any data behaviour changes. Those features are only a possible future direction today.
+          any data behaviour changes. Those features are only a possible future direction today. The
+          "last updated" date at the bottom of this page always reflects the current version.
         </p>
 
         <h2 class="display-sm serif">Contact</h2>
         <p>
-          A public contact email will be added here before the Google Play launch. Until then, see
-          the <a href={withBase("/about/")}>About</a> page to learn more about the developer.
+          For any privacy-related questions, email the developer at{" "}
+          <a href="mailto:nadeemmazhar12q@gmail.com">nadeemmazhar12q@gmail.com</a>.
+          The developer is a solo student in Pakistan and will respond as promptly as possible.
         </p>
 
         <p class="muted" style="margin-top:32px;font-size:0.88rem">Last updated: {updated}</p>
