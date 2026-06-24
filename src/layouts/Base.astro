@@ -14,7 +14,9 @@ const {
   jsonLd = [],
 } = Astro.props;
 
-const pageTitle = title ? `${title} — ${SITE.name}` : `${SITE.name} — ${app.tagline}`;
+const pageTitle = title
+  ? title.includes(SITE.name) ? title : `${title} — ${SITE.name}`
+  : `${SITE.name} — ${app.tagline}`;
 const canonical = absUrl(path);
 const ogImageUrl = absUrl(ogImage);
 
@@ -38,13 +40,13 @@ const organizationSchema = {
   ],
   contactPoint: {
     "@type": "ContactPoint",
-    email: "nadeemmazhar12q@gmail.com",
+    email: "kaizenlyplus@gmail.com",
     contactType: "customer support",
   },
   founder: {
     "@type": "Person",
     name: "Nadeem Mazhar",
-    email: "nadeemmazhar12q@gmail.com",
+    email: "kaizenlyplus@gmail.com",
     address: { "@type": "PostalAddress", addressCountry: "PK" },
   },
 };
@@ -101,12 +103,12 @@ const softwareSchema = {
     "@type": "Person",
     name: "Nadeem Mazhar",
     nationality: "Pakistani",
-    email: "nadeemmazhar12q@gmail.com",
+    email: "kaizenlyplus@gmail.com",
     address: { "@type": "PostalAddress", addressCountry: "PK" },
   },
   contactPoint: {
     "@type": "ContactPoint",
-    email: "nadeemmazhar12q@gmail.com",
+    email: "kaizenlyplus@gmail.com",
     contactType: "customer support",
   },
 };

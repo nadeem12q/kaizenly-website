@@ -14,7 +14,7 @@ export const app = {
   platform: 'Android',
   minAndroid: 'Android 8.0 (API 26)',
   price: 'Free',
-  contactEmail: 'nadeemmazhar12q@gmail.com',
+  contactEmail: 'kaizenlyplus@gmail.com',
   category: [
     'Productivity',
     'Habit Tracker',
