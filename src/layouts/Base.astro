@@ -18,14 +18,47 @@ const pageTitle = title ? `${title} — ${SITE.name}` : `${SITE.name} — ${app.
 const canonical = absUrl(path);
 const ogImageUrl = absUrl(ogImage);
 
+// Organization schema — helps Google learn the brand name for search result labels
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": absUrl("/#organization"),
+  name: "KaiZenly+",
+  alternateName: ["KaiZenly Plus", "KaiZenly", "Kaizenly", "Kaizenly Plus", "kaizenly+"],
+  url: absUrl("/"),
+  logo: {
+    "@type": "ImageObject",
+    url: absUrl("/icon-512.png"),
+    width: 512,
+    height: 512,
+  },
+  sameAs: [
+    "https://github.com/nadeem12q",
+    "https://nadeem12q.github.io/kaizenly/",
+  ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    email: "nadeemmazhar12q@gmail.com",
+    contactType: "customer support",
+  },
+  founder: {
+    "@type": "Person",
+    name: "Nadeem Mazhar",
+    email: "nadeemmazhar12q@gmail.com",
+    address: { "@type": "PostalAddress", addressCountry: "PK" },
+  },
+};
+
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": absUrl("/#website"),
   name: SITE.name,
   alternateName: ["KaiZenly Plus", "KaiZenly", "Kaizenly", "Kaizenly Plus", "kaizenly+"],
   url: absUrl("/"),
   description: SITE.shortDescription,
   inLanguage: "en",
+  publisher: { "@id": absUrl("/#organization") },
   potentialAction: {
     "@type": "SearchAction",
     target: { "@type": "EntryPoint", urlTemplate: absUrl("/?q={search_term_string}") },
@@ -78,7 +111,7 @@ const softwareSchema = {
   },
 };
 
-const schemas = [websiteSchema, ...(softwareApp ? [softwareSchema] : []), ...jsonLd];
+const schemas = [organizationSchema, websiteSchema, ...(softwareApp ? [softwareSchema] : []), ...jsonLd];
 ---
 
 <!doctype html>
@@ -108,9 +141,15 @@ const schemas = [websiteSchema, ...(softwareApp ? [softwareSchema] : []), ...jso
     <meta name="theme-color" content="#0f0f0f" media="(prefers-color-scheme: dark)" />
     <meta name="theme-color" content="#f2f2f2" media="(prefers-color-scheme: light)" />
 
-    <!-- Icons -->
+    <!-- Icons — all formats so Google, browsers, and PWAs all pick up the right one -->
+    <link rel="shortcut icon" href={withBase("/favicon.ico")} />
+    <link rel="icon" type="image/x-icon" href={withBase("/favicon.ico")} />
+    <link rel="icon" type="image/png" sizes="32x32" href={withBase("/icon-32.png")} />
+    <link rel="icon" type="image/png" sizes="48x48" href={withBase("/icon-48.png")} />
+    <link rel="icon" type="image/png" sizes="192x192" href={withBase("/icon-192.png")} />
     <link rel="icon" type="image/svg+xml" href={withBase("/favicon.svg")} />
-    <link rel="apple-touch-icon" href={withBase("/icon-180.png")} />
+    <link rel="apple-touch-icon" sizes="180x180" href={withBase("/icon-180.png")} />
+    <link rel="manifest" href={withBase("/site.webmanifest")} />
 
     <!-- Fonts: serif display (EB Garamond) + Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

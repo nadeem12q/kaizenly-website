@@ -1,0 +1,35 @@
+{
+  "name": "KaiZenly+",
+  "short_name": "KaiZenly+",
+  "description": "Habit tracker, app blocker, journal & mood tracker — all in one private Android app.",
+  "start_url": "/kaizenly/",
+  "scope": "/kaizenly/",
+  "display": "standalone",
+  "background_color": "#0f0f0f",
+  "theme_color": "#0f0f0f",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/kaizenly/icon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/kaizenly/icon-48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "/kaizenly/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/kaizenly/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
