@@ -1,5 +1,7 @@
 # KaiZenly+ — Marketing Website
 
+**🌐 Live site: https://nadeem12q.github.io/kaizenly/**
+
 A privacy-first, AI-agent-friendly marketing website for the **KaiZenly+** Android app.
 Built with **Astro** (static HTML output) and a hand-crafted monochrome CSS design system
 that mirrors the app's `DESIGN.md` (EB Garamond serif display + Inter, dark anchor + light
@@ -14,13 +16,13 @@ theme, pill buttons, flat hairline cards).
 
 ```bash
 npm install        # already run once
-npm run dev        # dev server  -> http://localhost:4321/kaizenly-plus/
+npm run dev        # dev server  -> http://localhost:4321/kaizenly/
 npm run build      # static build -> ./dist
-npm run preview    # serve the build -> http://localhost:4321/kaizenly-plus/
+npm run preview    # serve the build -> http://localhost:4321/kaizenly/
 ```
 
-> Note the trailing **/kaizenly-plus/** path — the site is configured for GitHub Pages, so the
-> homepage lives at `/kaizenly-plus/`, not `/`.
+> Note the trailing **/kaizenly/** path — the site is configured for GitHub Pages, so the
+> homepage lives at `/kaizenly/`, not `/`.
 
 ### Regenerate screenshots / assets (only if raw library changes)
 
@@ -108,7 +110,7 @@ turn into **"Get it on Google Play"** links automatically. No per-page edits nee
 
 ## Deploy to GitHub Pages
 
-The site is configured for `https://nadeem12q.github.io/kaizenly-plus/` (a **project page** of
+The site is configured for `https://nadeem12q.github.io/kaizenly/` (a **project page** of
 the `kaizenly-plus` repo). Recommended: keep the website in a `web/` subfolder of that repo.
 
 1. Copy this whole folder into the repo as `web/` (so `kaizenly-plus/web/package.json` exists).
