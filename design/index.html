@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Design — KaiZenly+ Has Moved</title>
+    <meta name="description" content="KaiZenly+ has moved to a new domain. You will be redirected automatically." />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap" />
+    <link rel="stylesheet" href="/style.css" />
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem("kz-theme");
+                if (t === "light" || t === "dark") {
+                    document.documentElement.setAttribute("data-theme", t);
+                }
+            } catch (e) {}
+        })();
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <a class="brand" href="/" aria-label="KaiZenly+ home">
+                <img src="/favicon.svg" alt="" width="28" height="28" />
+                <span>KaiZenly+</span>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container center">
+                <div class="redirect-box">
+                    <p class="eyebrow" style="font-family:var(--sans);font-size:0.72rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-muted)">Domain Changed</p>
+                    <h1 class="display-sm" style="margin-top:12px">KaiZenly+ has a new home</h1>
+                    <p class="lede" style="margin-top:14px">
+                        We've moved to a new domain. You'll be redirected automatically in <strong id="seconds">20</strong> seconds.
+                    </p>
+                    <p style="margin-top:16px;font-size:0.92rem;color:var(--ink-muted)">
+                        <span class="new-domain">New address:</span><br />
+                        <a href="https://kaizenly.qzz.io/design/" style="text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--ink-faint)" onmouseover="this.style.textDecorationColor='var(--ink)'" onmouseout="this.style.textDecorationColor='var(--ink-faint)'">https://kaizenly.qzz.io/design/</a>
+                    </p>
+                    <div class="progress-bar">
+                        <div class="progress-bar-fill" id="progress"></div>
+                    </div>
+                    <p class="countdown" id="countdown">Redirecting in 20s</p>
+                    <div class="btn-row" style="justify-content:center;margin-top:24px">
+                        <a class="btn btn-primary" href="https://kaizenly.qzz.io/design/">Go now</a>
+                        <a class="btn btn-secondary" href="https://kaizenly.qzz.io/">Back to home</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-bottom" style="margin-top:0;padding-top:0;border-top:none">
+                <span>&copy; 2026 KaiZenly+. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            var total = 20;
+            var remaining = total;
+            var el = document.getElementById("seconds");
+            var cd = document.getElementById("countdown");
+            var bar = document.getElementById("progress");
+
+            function tick() {
+                el.textContent = remaining;
+                cd.textContent = "Redirecting in " + remaining + "s";
+                bar.style.width = ((total - remaining) / total * 100) + "%";
+                if (remaining <= 0) {
+                    window.location.href = "https://kaizenly.qzz.io/design/";
+                } else {
+                    remaining--;
+                    setTimeout(tick, 1000);
+                }
+            }
+            tick();
+        })();
+    </script>
+</body>
+</html>
